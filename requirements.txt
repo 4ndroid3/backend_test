@@ -1,0 +1,6 @@
+# Django
+Django
+django-extensions
+
+# Django REST Framework
+djangorestframework
