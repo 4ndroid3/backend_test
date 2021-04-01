@@ -1,6 +1,7 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
+from django.views.generic.edit import CreateView
 
-from .models import Book, Author, Library
+from .models import Book, Author, Library, Leads
 
 
 class BookListView(ListView):
@@ -25,7 +26,10 @@ class LibraryListView(ListView):
     model = Library
     context_object_name = 'libraries'
 
+class LeadsCreationView(CreateView):
+    pass
 
 book_list_view = BookListView.as_view()
 author_list_view = AuthorListView.as_view()
 library_list_view = LibraryListView.as_view()
+leads_create_view = LeadsCreationView.as_view()
