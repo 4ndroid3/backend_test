@@ -2,33 +2,43 @@
 
 # Django Imports
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-# Project Imports
-from book import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(
-        route = '',
-        view = book_list_view,
-        name = '',
-    ),
-
-    path(
-        route = '',
-        author_list_view,
-        name = '',
-    ),
-    path(
-        route = '', 
-        view = library_list_view,
-        name = '',
-    ),
-    path(
-        route = '',
-        view = leads_create_view,
-        name = '',    
-    ),
+    path('', include('book.urls')),
+    
+    # path(
+    #     route = 'library/{id}',
+    #     view = views.LibraryView,
+    #     name = 'library_ABM',
+    # ),
+    # path(
+    #     route = 'library/{id}/books/{id}',
+    #     view = ,
+    #     name = 'librery_filter',
+    # ),
+    # path(
+    #     route = 'book/{id}', 
+    #     view = ,
+    #     name = 'book_ABM',
+    # ),
+    # path(
+    #     route = 'book/search?text="{title}"',
+    #     view = ,
+    #     name = 'book_search',    
+    # ),
+    # path(
+    #     route = 'author/{id}',
+    #     view = ,
+    #     name = 'author',    
+    # ),
+    # path(
+    #     route = 'lead/',
+    #     view = ,
+    #     name = 'leads',    
+    # ),
 
 ]
