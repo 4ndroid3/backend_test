@@ -2,7 +2,8 @@
 
 # Django REST Framework Imports
 from rest_framework import status
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import GenericViewSet
+from rest_framework import mixins
 
 # Project Imports
 from book.serializers import *
@@ -43,7 +44,10 @@ from .models import Book, Author, Library, Leads
 # library_list_view = LibraryListView.as_view()
 # leads_create_view = LeadsCreationView.as_view()
 
-class LibraryView(ModelViewSet):
+class LibraryView(mixins.CreateModelMixin,
+                mixins.RetrieveModelMixin,
+                mixins.UpdateModelMixin,
+                GenericViewSet):
     """ View de library, realiza acciones de ABM"""
     queryset = Library.objects.all()
     serializer_class = LibraryModelSerializer
