@@ -28,3 +28,10 @@ class AuthorModelSerializer(serializers.ModelSerializer):
         """ Meta Class"""
         model = Author
         fields = ('first_name', 'last_name')
+
+class LeadModelSerializer(serializers.ModelSerializer):
+    """ Serializer de Leads"""
+    class Meta:
+        """ Meta Class"""
+        model = Leads
+        fields = ('email', 'full_name', 'phone', 'library')

@@ -16,6 +16,7 @@ router.register(
     basename = 'library_books')
 router.register(r'book', views.BookView, basename = 'book')
 router.register(r'author', views.AuthorView, basename = 'author')
+router.register(r'lead', views.LeadView, basename = 'lead')
 
 urlpatterns = [
     path('', include(router.urls)),

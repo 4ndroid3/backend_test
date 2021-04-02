@@ -49,3 +49,8 @@ class AuthorView(mixins.CreateModelMixin, mixins.RetrieveModelMixin,
     """ View de authors, realiza acciones de ABM """
     queryset = Author.objects.all()
     serializer_class = AuthorModelSerializer
+
+class LeadView(mixins.CreateModelMixin, GenericViewSet):
+    """ View de leads, crea un lead y envia un email al usuario del email"""
+    queryset = Leads.objects.all()
+    serializer_class = LeadModelSerializer
