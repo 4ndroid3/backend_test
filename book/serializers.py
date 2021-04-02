@@ -16,3 +16,18 @@ class LibraryModelSerializer(serializers.ModelSerializer):
 
         model = Library
         fields = ('name',)
+
+class FilterBookModelSerializer(serializers.ModelSerializer):
+    """ Serializer de los Libros"""
+
+    class Meta:
+        """ Meta Class"""
+        model = Book
+        fields = ('title', 'author', 'libraries',)
+
+class BookModelSerializer(serializers.ModelSerializer):
+    """ """
+    class Meta:
+        """ Meta Class"""
+        model = Book
+        fields = ('title', 'author', 'libraries',)

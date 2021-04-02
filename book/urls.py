@@ -10,7 +10,11 @@ from book import views
 
 router = DefaultRouter()
 router.register(r'library', views.LibraryView, basename = 'library')
-
+router.register(
+    r'library/(?P<libraries_pk>[^/.]+)/books',
+    views.LibraryBookView,
+    basename = 'library_books')
+router.register(r'book', views.BookView, basename = 'book')
 
 urlpatterns = [
     path('', include(router.urls)),
