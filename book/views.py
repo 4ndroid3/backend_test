@@ -4,13 +4,13 @@
 from rest_framework import status
 from rest_framework.viewsets import GenericViewSet
 from rest_framework.generics import ListCreateAPIView
-from rest_framework.viewsets import ModelViewSet
 from rest_framework import mixins
 from rest_framework import filters
 
 # Project Imports
 from book.serializers import *
 from .models import Book, Author, Library, Leads
+
 
 class LibraryView(mixins.CreateModelMixin, mixins.RetrieveModelMixin,
                 mixins.UpdateModelMixin, GenericViewSet):
@@ -34,7 +34,8 @@ class LibraryBookView(mixins.RetrieveModelMixin,
 class BookView(mixins.CreateModelMixin, mixins.RetrieveModelMixin,
                 mixins.UpdateModelMixin, mixins.ListModelMixin,
                 GenericViewSet):
-
+    """ View de book, realiza acciones de ABM,
+    hace filtro de busqueda de los titulos de libros """
     queryset = Book.objects.all()
     serializer_class = BookModelSerializer
 

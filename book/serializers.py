@@ -1,12 +1,10 @@
 """ Books Serializers"""
 
-# Django Imports
-from .models import Book, Author, Library, Leads
-
 # Django REST Framework Imports
 from rest_framework import serializers
 
 # Project Imports
+from .models import Book, Author, Library, Leads
 
 class LibraryModelSerializer(serializers.ModelSerializer):
     """Serializer para las librerias"""
@@ -17,16 +15,8 @@ class LibraryModelSerializer(serializers.ModelSerializer):
         model = Library
         fields = ('name',)
 
-class FilterBookModelSerializer(serializers.ModelSerializer):
-    """ Serializer de los Libros"""
-
-    class Meta:
-        """ Meta Class"""
-        model = Book
-        fields = ('title', 'author', 'libraries',)
-
 class BookModelSerializer(serializers.ModelSerializer):
-    """ """
+    """ Serializer de books"""
     class Meta:
         """ Meta Class"""
         model = Book
