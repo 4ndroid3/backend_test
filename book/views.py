@@ -27,6 +27,8 @@ class LibraryBookView(mixins.RetrieveModelMixin,
     serializer_class = BookModelSerializer
 
     def get_queryset(self):
+        """ Se filtra a los libros por librerias, solo dara 
+        resultados que coincidan, libros adentro de librerias """
         queryset = Book.objects.filter(libraries = self.kwargs['libraries_pk'])
 
         return queryset
@@ -42,4 +44,8 @@ class BookView(mixins.CreateModelMixin, mixins.RetrieveModelMixin,
     filter_backends = (filters.SearchFilter,)
     search_fields = ['$title',]
 
-    
+class AuthorView(mixins.CreateModelMixin, mixins.RetrieveModelMixin,
+                mixins.UpdateModelMixin, GenericViewSet):
+    """ View de authors, realiza acciones de ABM """
+    queryset = Author.objects.all()
+    serializer_class = AuthorModelSerializer

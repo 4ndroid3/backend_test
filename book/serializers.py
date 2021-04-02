@@ -21,3 +21,10 @@ class BookModelSerializer(serializers.ModelSerializer):
         """ Meta Class"""
         model = Book
         fields = ('title', 'author', 'libraries',)
+
+class AuthorModelSerializer(serializers.ModelSerializer):
+    """ Serializer de Authors"""
+    class Meta:
+        """ Meta Class"""
+        model = Author
+        fields = ('first_name', 'last_name')
