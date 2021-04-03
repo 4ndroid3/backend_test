@@ -5,3 +5,6 @@ django-extensions
 # Django REST Framework
 djangorestframework
 django-filter
+
+# JWT
+djangorestframework_simplejwt

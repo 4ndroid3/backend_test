@@ -7,6 +7,8 @@ from rest_framework.generics import ListCreateAPIView
 from rest_framework import mixins
 from rest_framework import filters
 
+from rest_framework_simplejwt.views import TokenObtainPairView
+
 # Project Imports
 from book.serializers import *
 from .models import Book, Author, Library, Leads
@@ -54,3 +56,4 @@ class LeadView(mixins.CreateModelMixin, GenericViewSet):
     """ View de leads, crea un lead y envia un email al usuario del email"""
     queryset = Leads.objects.all()
     serializer_class = LeadModelSerializer
+
