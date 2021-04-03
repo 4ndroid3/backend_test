@@ -6,8 +6,8 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework.generics import ListCreateAPIView
 from rest_framework import mixins
 from rest_framework import filters
-
-from rest_framework_simplejwt.views import TokenObtainPairView
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.permissions import IsAuthenticated
 
 # Project Imports
 from book.serializers import *
@@ -43,8 +43,9 @@ class BookView(mixins.CreateModelMixin, mixins.RetrieveModelMixin,
     queryset = Book.objects.all()
     serializer_class = BookModelSerializer
 
-    filter_backends = (filters.SearchFilter,)
+    filter_backends = (filters.SearchFilter, DjangoFilterBackend)
     search_fields = ['$title',]
+    filter_fields = ['title', 'author', 'libraries']
 
 class AuthorView(mixins.CreateModelMixin, mixins.RetrieveModelMixin,
                 mixins.UpdateModelMixin, GenericViewSet):
@@ -54,6 +55,6 @@ class AuthorView(mixins.CreateModelMixin, mixins.RetrieveModelMixin,
 
 class LeadView(mixins.CreateModelMixin, GenericViewSet):
     """ View de leads, crea un lead y envia un email al usuario del email"""
+    permission_classes = (IsAuthenticated,)
     queryset = Leads.objects.all()
     serializer_class = LeadModelSerializer
-

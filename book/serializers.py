@@ -3,8 +3,6 @@
 # Django REST Framework Imports
 from rest_framework import serializers
 
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-
 # Django Imports
 from django.core.mail import send_mail
 
