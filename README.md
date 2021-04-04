@@ -4,6 +4,7 @@ API creada en Django REST framework, la misma corre en un contenedor Docker, el 
 
 - Base de datos: SQLite3
 - Autenticacion: JWT (Simple JWT)
+- Contenedor: Docker
 
 # Instalación
 1. Clonar respositorio
