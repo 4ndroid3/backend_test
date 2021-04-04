@@ -8,3 +8,6 @@ django-filter
 
 # JWT
 djangorestframework_simplejwt
+
+# TESTING
+flake8

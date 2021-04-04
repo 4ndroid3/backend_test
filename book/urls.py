@@ -10,14 +10,14 @@ from rest_framework_simplejwt import views as jwt_views
 from book import views
 
 router = DefaultRouter()
-router.register(r'library', views.LibraryView, basename = 'library')
+router.register(r'library', views.LibraryView, basename='library')
 router.register(
     r'library/(?P<libraries_pk>[^/.]+)/books',
     views.LibraryBookView,
-    basename = 'library_books')
-router.register(r'book', views.BookView, basename = 'book')
-router.register(r'author', views.AuthorView, basename = 'author')
-router.register(r'lead', views.LeadView, basename = 'lead')
+    basename='library_books')
+router.register(r'book', views.BookView, basename='book')
+router.register(r'author', views.AuthorView, basename='author')
+router.register(r'lead', views.LeadView, basename='lead')
 
 urlpatterns = [
     path('', include(router.urls)),
