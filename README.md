@@ -23,13 +23,13 @@ Guia de endpóints del API
 - /library/ (POST)
 - /library/{id} (GET, PUT, DELETE)
 - /library/{id}/books/{id} (GET)
- /book/ (GET, POST)
- /book/{id} (GET, PUT)
- /book/?title=&author=&libraries= (GET) {Busqueda por campos}
- /book/?search= (GET) {Busqueda general}
- /author/ (POST)
- /author/{id} (GET)
- /lead/ (POST)
+- /book/ (GET, POST)
+- /book/{id} (GET, PUT)
+- /book/?title=&author=&libraries= (GET) {Busqueda por campos}
+- /book/?search= (GET) {Busqueda general}
+- /author/ (POST)
+- /author/{id} (GET)
+- /lead/ (POST)
 
 Como caracteristica especial al crearse el Lead, una vez validados los datos se hace una "emulacion" de envio de email a traves de la consola.
 Se habilitó el cache de Django.
