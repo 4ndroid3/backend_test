@@ -20,16 +20,16 @@ La API tiene los siguientes endpoints, los mismos se acceden a traves del Browsa
 En caso de pedir un POST en library, book o author. Primero se deberá generar el token de JWT en el endpoint /token/, ahi se debe ingresar los datos del usuario y JWT va a devolver 2 codigos; 'access' y 'refresh'. En caso de que se realice la consulta dentro de los 30 minutos despues de crear el token se deberá volver a ingresar el codigo de 'refresh' en el endpoint /token/refresh/, este proporcionará un nuevo codigo 'access'.
 
 Guia de endpóints del API
-/library/ (POST)
-/library/{id} (GET, PUT, DELETE)
-/library/{id}/books/{id} (GET)
-/book/ (GET, POST)
-/book/{id} (GET, PUT)
-/book/?title=&author=&libraries= (GET) {Busqueda por campos}
-/book/?search= (GET) {Busqueda general}
-/author/ (POST)
-/author/{id} (GET)
-/lead/ (POST)
+- /library/ (POST)
+- /library/{id} (GET, PUT, DELETE)
+- /library/{id}/books/{id} (GET)
+ /book/ (GET, POST)
+ /book/{id} (GET, PUT)
+ /book/?title=&author=&libraries= (GET) {Busqueda por campos}
+ /book/?search= (GET) {Busqueda general}
+ /author/ (POST)
+ /author/{id} (GET)
+ /lead/ (POST)
 
 Como caracteristica especial al crearse el Lead, una vez validados los datos se hace una "emulacion" de envio de email a traves de la consola.
 Se habilitó el cache de Django.
