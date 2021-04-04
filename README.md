@@ -28,5 +28,9 @@ Guia de endpóints del API
 - /author/ (POST) | /author/{id} (GET)
 - /lead/ (POST)
 
+Endpoints de Tokens:
+- /token/
+- /token/refresh/
+
 Como caracteristica especial al crearse el Lead, una vez validados los datos se hace una "emulacion" de envio de email a traves de la consola.
 Se habilitó el cache de Django.
