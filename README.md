@@ -20,7 +20,7 @@ La API tiene los siguientes endpoints, los mismos se acceden a traves del Browsa
 
 En caso de pedir un POST en library, book o author. Primero se deberá generar el token de JWT en el endpoint /token/, ahi se debe ingresar los datos del usuario y JWT va a devolver 2 codigos; 'access' y 'refresh'. En caso de que se realice la consulta dentro de los 30 minutos despues de crear el token se deberá volver a ingresar el codigo de 'refresh' en el endpoint /token/refresh/, este proporcionará un nuevo codigo 'access'.
 
-Guia de endpóints del API
+Guia de endpoints del API
 - /library/ (POST) | /library/{id} (GET, PUT, DELETE)
 - /library/{id}/books/{id} (GET)
 - /book/ (GET, POST) | /book/{id} (GET, PUT)
