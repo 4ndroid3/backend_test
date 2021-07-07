@@ -34,3 +34,6 @@ Endpoints de Tokens:
 
 Como caracteristica especial al crearse el Lead, una vez validados los datos se hace una "emulacion" de envio de email a traves de la consola.
 Se habilitó el cache de Django.
+
+### Documentacion en POSTMAN
+https://documenter.getpostman.com/view/16509269/Tzm5HH36
