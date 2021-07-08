@@ -15,17 +15,6 @@ class Library(models.Model):
         verbose_name = 'Library'
         verbose_name_plural = 'Libraries'
 
-
-class Book(models.Model):
-
-    title = models.CharField(max_length=100)
-    author = models.ForeignKey('book.Author', on_delete=models.CASCADE)
-    libraries = models.ManyToManyField('book.Library')
-
-    def __str__(self):
-        return '{} - {}'.format(self.title, self.author)
-
-
 class Author(models.Model):
 
     first_name = models.CharField(max_length=100)
@@ -34,6 +23,14 @@ class Author(models.Model):
     def __str__(self):
         return '{} {}'.format(self.first_name, self.last_name)
 
+class Book(models.Model):
+
+    title = models.CharField(max_length=100)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    libraries = models.ManyToManyField('book.Library')
+
+    def __str__(self):
+        return '{} - {}'.format(self.title, self.author)
 
 class Leads(models.Model):
     """ Modelo de Lead
@@ -64,7 +61,7 @@ class Leads(models.Model):
     )
 
     library = models.ForeignKey(
-        'Library',
+        Library,
         on_delete=models.CASCADE,
         verbose_name='Libreria',
         help_text='Libreria del Usuario',
